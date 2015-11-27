@@ -1,0 +1,23 @@
+{
+  "name": "angular-example",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Alvaro-Andrioli/angular-example",
+  "authors": [
+    "aandrioli <andrioliti@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8"
+  }
+}
