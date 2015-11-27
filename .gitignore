@@ -1,0 +1,9 @@
+###############
+# bower
+###############
+bower_components/
+
+###############
+# node dependencies
+###############
+node_modules/
