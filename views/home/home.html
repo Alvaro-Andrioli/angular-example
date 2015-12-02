@@ -1,25 +1,31 @@
 <div>
-    <div class="page-header">
-      <h1>Página inicial</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+      			<h1>Página inicial</h1>
+    		</div>
+		</div>
+	</div>
+    <div class="row">
+    	<div class="col-md-6">
+    		<div class="panel panel-primary">
+    			<div class="panel-heading">
+    				Cadastro de contatos
+    			</div>
+    			<div class="panel-body">
+    			   <a type="button" class="btn btn-default" ui-sref="cad-contato">Cadastrar contato</a>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="col-md-6">
+    		<div class="panel panel-primary">
+    			<div class="panel-heading">
+    				Lista de contatos
+    			</div>
+    			<div class="panel-body">
+    				<a type="button" class="btn btn-default" ui-sref="list-contato">Lista de contatos</a>
+    			</div>
+    		</div>
+    	</div>
     </div>
-    <br>
-    <form role="form">
-    	<legend>Cadastro de contato</legend>
-    
-    	<div class="form-group">
-    		<label for="">Nome</label>
-    		<input type="text" class="form-control" ng-model="contato.nome" placeholder="Nome do contato">
-    	</div>
-    	<div class="form-group">
-    		<label for="">Telefone</label>
-    		<input type="text" class="form-control" ng-model="contato.telefone" placeholder="Telefone do contato">
-    	</div>
-    
-    	<button type="submit" class="btn btn-primary" ng-click="salvarContato()">Salvar</button>&nbsp;
-    	<button type="button" class="btn btn-primary" ng-click="buscarContatos()">Buscar dados</button>
-    </form>
-    <br>
-    <ul class="list-group">
-    	<li class="list-group-item" ng-repeat="contato in contatos">{{ contato.nome }} : {{ contato.telefone }}</li>
-    </ul>
 </div>

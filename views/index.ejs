@@ -15,24 +15,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#/home">Agenda</a>
+                    <a class="navbar-brand" ui-sref="home">Agenda</a>
                 </div>
             
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
+                        <li><a ui-sref="list-contato">Lista de contatos</a></li>
+                        <li><a ui-sref="cad-contato">Cadastro de contato</a></li>
                     </ul>
+
+                    <!-- REGHT NAVBAR -->
+                    <p class="navbar-text navbar-right">versão: {{ VERSION }}</p>
                 </div><!-- /.navbar-collapse -->
             </nav>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
                         <ui-view></ui-view>
                     </div>
-                    <div class="col-md-3"></div>
+                    <div class="col-md-2"></div>
                 </div>
             </div>
             <!--BOWER -->
@@ -45,7 +48,12 @@
             <!--SCRIPTS-->
             <script type="text/javascript" src="javascripts/angularApp.js"></script>
             <script type="text/javascript" src="javascripts/angularApp.constants.js"></script>
+            <script type="text/javascript" src="javascripts/app/home/home.js"></script>
             <script type="text/javascript" src="javascripts/app/home/home.controller.js"></script>
+            <script type="text/javascript" src="javascripts/app/contato/list/list.contato.js"></script>
+            <script type="text/javascript" src="javascripts/app/contato/list/list.contato.controller.js"></script>
+            <script type="text/javascript" src="javascripts/app/contato/cad/cad.contato.js"></script>
+            <script type="text/javascript" src="javascripts/app/contato/cad/cad.contato.controller.js"></script>
             <script type="text/javascript" src="javascripts/components/contato/contato.service.js"></script>
             <!--/SCRIPTS-->
         </body>
