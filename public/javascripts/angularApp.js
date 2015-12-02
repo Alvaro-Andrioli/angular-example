@@ -4,8 +4,14 @@ angular.module('agenda', ['ui.router'])
         .state('home', {
             url: '/home',
             templateUrl: '/template/home/home.html',
-            controller: 'homeController'
-    });
+            controller: 'homeController',
+            resolve: {
+  				initial: function(contatoService) {
+  					return contatoService.getContatos();
+  				}
+            }
+    	}
+    );
     
     $urlRouterProvider.otherwise('home');
 });

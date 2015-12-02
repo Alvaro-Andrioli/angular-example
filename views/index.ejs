@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  </head>
-  <body ng-app="agenda">
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <div class="container">
-      <ui-view></ui-view>
-    </div>
-    <!--BOWER -->
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <!--/BOWER -->
-    
-    <!--SCRIPTS-->
-    <script type="text/javascript" src="javascripts/angularApp.js"></script>
-    <script type="text/javascript" src="javascripts/angularApp.constants.js"></script>
-    <script type="text/javascript" src="javascripts/app/home/home.controller.js"></script>
-    <!--/SCRIPTS-->
-  </body>
-</html>
+    <head>
+        <title>Agenda</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    </head>
+    <body ng-app="agenda">
+            <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/home">Agenda</a>
+                </div>
+            
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <ui-view></ui-view>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+            <!--BOWER -->
+            <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+            <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+            <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+            <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+            <!--/BOWER -->
+            
+            <!--SCRIPTS-->
+            <script type="text/javascript" src="javascripts/angularApp.js"></script>
+            <script type="text/javascript" src="javascripts/angularApp.constants.js"></script>
+            <script type="text/javascript" src="javascripts/app/home/home.controller.js"></script>
+            <script type="text/javascript" src="javascripts/components/contato/contato.service.js"></script>
+            <!--/SCRIPTS-->
+        </body>
+    </html>

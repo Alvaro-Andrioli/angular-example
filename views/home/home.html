@@ -1,3 +1,25 @@
 <div>
-    <h2>Teste desta porra</h2>
+    <div class="page-header">
+      <h1>Página inicial</h1>
+    </div>
+    <br>
+    <form role="form">
+    	<legend>Cadastro de contato</legend>
+    
+    	<div class="form-group">
+    		<label for="">Nome</label>
+    		<input type="text" class="form-control" ng-model="contato.nome" placeholder="Nome do contato">
+    	</div>
+    	<div class="form-group">
+    		<label for="">Telefone</label>
+    		<input type="text" class="form-control" ng-model="contato.telefone" placeholder="Telefone do contato">
+    	</div>
+    
+    	<button type="submit" class="btn btn-primary" ng-click="salvarContato()">Salvar</button>&nbsp;
+    	<button type="button" class="btn btn-primary" ng-click="buscarContatos()">Buscar dados</button>
+    </form>
+    <br>
+    <ul class="list-group">
+    	<li class="list-group-item" ng-repeat="contato in contatos">{{ contato.nome }} : {{ contato.telefone }}</li>
+    </ul>
 </div>
