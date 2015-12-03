@@ -17,7 +17,7 @@ router.get('/contatos', function(req, res, next) {
 	});
 });
 
-/* GET add contato */
+/* POST add contato */
 router.post('/add', function(req, res, next) {
 	console.log(req.body);
 	var contato = new Contato(req.body);
@@ -29,7 +29,8 @@ router.post('/add', function(req, res, next) {
 	});
 });
 
-router.delete('/delete', function(req, res, next) {
+/* POST remove contato */
+router.post('/delete', function(req, res, next) {
 	console.log(req.body);
 	var contato = new Contato(req.body);
 

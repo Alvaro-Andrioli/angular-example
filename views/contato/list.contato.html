@@ -29,12 +29,16 @@
 						<tr ng-repeat="contato in contatos | filter:query | orderBy:campo:ordem">
 							<td>{{ contato.nome }}</td>
 							<td>{{ contato.telefone }}</td>
-							<td><button type="button" class="btn btn-danger" ng-click="delete($index)">Remover</button>
-								&nbsp;<button type="button" class="btn btn-warning" ng-click="alterar($index)">Alterar</button></td>
+							<td>
+								<button type="button" class="btn btn-danger" ng-click="delete($index)">Remover</button>&nbsp;
+								<button type="button" class="btn btn-warning" ng-click="alterar($index)">Alterar</button>
+							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
+			<br>
+			<my-alert></my-alert>
 		</div>
 	</div>
 </div>

@@ -9,8 +9,13 @@ angular.module('agenda')
 		return $http.post('/add', contato);
 	}
 
+	var _removeContato = function(contato) {
+		return $http.post('/delete', contato);	
+	}
+
 	return {
 		getContatos: _getContatos,
-		addContato: _addContato
+		addContato: _addContato,
+		removeContato: _removeContato
 	};
 });

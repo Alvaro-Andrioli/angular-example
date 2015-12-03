@@ -1,6 +1,7 @@
 angular.module('agenda')
-.controller('listContatoController', function ($scope, initContato) {
+.controller('listContatoController', function ($scope, initContato, contatoService, alertService) {
 	$scope.ordem = false;
+	$scope.contatos = [];
 
 	if (initContato.data.length > 0) {
 		$scope.contatos = initContato.data;
@@ -12,6 +13,14 @@ angular.module('agenda')
 	}
 
 	$scope.delete = function(index) {
-		console.log($scope.contatos[index]);
+		contatoService.removeContato($scope.contatos[index]).success(function() {
+			alertService.addAlert({type: 'success', msg: 'Contato apagado com sucesso!'});
+			contatoService.getContatos().success(function(data) {
+				$scope.contatos = data;
+			});
+		}).error(function() {
+			alertService.addAlert({type: 'danger', msg: 'Algo de errado aconteceu!'});
+		});
 	}
+
 });

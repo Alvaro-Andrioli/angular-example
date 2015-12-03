@@ -1,4 +1,6 @@
-<div class="alert">
-	<button type="button" class="close" ng-click="fechar()" data-dismiss="alert">&times;</button>
-	<span ng-transclude></span>
+<div>
+	<div class="alert {{ alert.type }}"  ng-repeat="alert in alerts">
+		<button type="button" class="close" ng-click="close($index)" data-dismiss="alert">&times;</button>
+		<strong>{{ alert.title }}</strong>&nbsp;<span>{{ alert.msg }}</span>
+	</div>
 </div>
