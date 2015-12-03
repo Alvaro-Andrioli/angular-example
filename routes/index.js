@@ -29,4 +29,15 @@ router.post('/add', function(req, res, next) {
 	});
 });
 
+router.delete('/delete', function(req, res, next) {
+	console.log(req.body);
+	var contato = new Contato(req.body);
+
+	contato.remove(function(err, contato) {
+		if(err){ return next(err); }
+
+		res.json(contato);
+	});
+});
+
 module.exports = router;

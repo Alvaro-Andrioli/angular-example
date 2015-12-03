@@ -1,5 +1,30 @@
 <div>
-	<div class="page-header">
-		<h1>Cadastro de contato</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1>Cadastro de contato</h1>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<form role="form">
+				<legend>Formulário para cadastro do Contato</legend>
+			
+				<div class="form-group">
+					<label>Nome</label>
+					<input type="text" class="form-control" ng-model="contato.nome" placeholder="Nome do contato">
+				</div>
+				
+				<div class="form-group">
+					<label>Telefone</label>
+					<input type="text" class="form-control" ng-model="contato.telefone" placeholder="Telefone do contato">
+				</div>
+			
+				<button type="submit" class="btn btn-primary" ng-click="cadastrar()">Enviar</button>
+			</form>
+			<br>
+			<my-alert ng-repeat="alert in alerts" close="closeAlert($index)" type="{{ alert.type }}">{{ alert.msg }}</my-alert>
+		</div>
 	</div>
 </div>

@@ -1,4 +1,4 @@
-angular.module('agenda', ['ui.router'])
+angular.module('agenda', ['ui.router', 'ui.bootstrap'])
 .config(function($urlRouterProvider) {
     
     $urlRouterProvider.otherwise('home');

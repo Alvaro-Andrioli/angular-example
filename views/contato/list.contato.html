@@ -1,9 +1,40 @@
 <div>
-	<div class="page-header">
-	  <h1>Lista de contatos</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1>Lista de contatos</h1>
+			</div>
+		</div>
 	</div>
-	<br>
-	<ul class="list-group">
-		<li class="list-group-item" ng-repeat="contato in contatos">{{ contato }}</li>
-	</ul>
+	<div class="row">
+		<div class="col-md-12">
+		
+			<input type="text" class="form-control" ng-model="query" placeholder="Filtro">
+		
+			<br>
+			<div id="fixed-heigth">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th style="cursor:pointer;" ng-click="ordenarPor('nome')">
+								Nome
+							</th>
+							<th style="cursor:pointer;" ng-click="ordenarPor('telefone')"> 
+								Telefone
+							</th>
+							<th width="30%">Ações</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="contato in contatos | filter:query | orderBy:campo:ordem">
+							<td>{{ contato.nome }}</td>
+							<td>{{ contato.telefone }}</td>
+							<td><button type="button" class="btn btn-danger" ng-click="delete($index)">Remover</button>
+								&nbsp;<button type="button" class="btn btn-warning" ng-click="alterar($index)">Alterar</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 </div>
