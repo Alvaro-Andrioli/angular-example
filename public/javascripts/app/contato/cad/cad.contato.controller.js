@@ -6,6 +6,7 @@ angular.module('agenda')
 	$scope.cadastrar = function() {
 		contatoService.addContato($scope.contato).success(function() {
 			alertService.addAlert({title: "Sucesso!", type:'success', msg:'Cadastro Feito com sucesso!'});
+			delete $scope.contato;
 		}).error(function() {
 			alertService.addAlert({title: "Erro!", type:'danger', msg:'Erro ao cadastrar contato!'}); 
 		});

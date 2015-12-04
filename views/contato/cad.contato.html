@@ -8,20 +8,20 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<form role="form">
+			<form role="form" name="contatoForm">
 				<legend>Formulário para cadastro do Contato</legend>
 			
 				<div class="form-group">
 					<label>Nome</label>
-					<input type="text" class="form-control" ng-model="contato.nome" placeholder="Nome do contato">
+					<input type="text" class="form-control" ng-model="contato.nome" placeholder="Nome do contato" ng-required="true">
 				</div>
 				
 				<div class="form-group">
 					<label>Telefone</label>
-					<input type="text" class="form-control" ng-model="contato.telefone" placeholder="Telefone do contato" mask="(99) 9999-9999">
+					<input type="text" class="form-control" ng-model="contato.telefone" placeholder="Telefone do contato" ng-required="true" mask="(99) 9999-9999" ng-minlength="14">
 				</div>
 			
-				<button type="submit" class="btn btn-primary" ng-click="cadastrar()">Enviar</button>
+				<button type="submit" class="btn btn-primary" ng-click="cadastrar()" ng-disabled="contatoForm.$invalid">Enviar</button>
 			</form>
 			<br>
 			<my-alert></my-alert>

@@ -19,7 +19,7 @@ router.get('/contatos', function(req, res, next) {
 
 /* POST add contato */
 router.post('/add', function(req, res, next) {
-	console.log(req.body);
+
 	var contato = new Contato(req.body);
 
 	contato.save(function(err, contato) {
@@ -31,7 +31,7 @@ router.post('/add', function(req, res, next) {
 
 /* POST remove contato */
 router.post('/delete', function(req, res, next) {
-	console.log(req.body);
+
 	var contato = new Contato(req.body);
 
 	contato.remove(function(err, contato) {
@@ -39,6 +39,18 @@ router.post('/delete', function(req, res, next) {
 
 		res.json(contato);
 	});
+});
+
+/* POST update contato */
+router.post('/update', function(req, res, next) {
+	var afterContato = new Contato(req.body);
+
+	Contato.findByIdAndUpdate(afterContato._id, afterContato, function(err, beforeContato) {
+		if(err){ return next(err); }
+
+		res.send(beforeContato);
+	});
+
 });
 
 module.exports = router;

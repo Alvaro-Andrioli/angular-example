@@ -1,5 +1,5 @@
 angular.module('agenda')
-.controller('listContatoController', function ($scope, initContato, contatoService, alertService) {
+.controller('listContatoController', function ($scope, initContato, contatoService, alertService, $uibModal) {
 	$scope.ordem = false;
 	$scope.contatos = [];
 
@@ -20,6 +20,26 @@ angular.module('agenda')
 			});
 		}).error(function() {
 			alertService.addAlert({type: 'danger', msg: 'Algo de errado aconteceu!'});
+		});
+	}
+
+	$scope.alterar = function(index) {
+		var modalInstance = $uibModal.open({
+			templateUrl: '/template/modal/contato/alter.modal.html',
+			controller: 'listContatoModalController',
+			size: 'md',
+			animation: true,
+			resolve: {
+				contato: function() {
+					return $scope.contatos[index];
+				}
+			}
+		});
+
+		modalInstance.result.then(function() {
+			contatoService.getContatos().success(function(data) {
+				$scope.contatos = data;
+			});
 		});
 	}
 
